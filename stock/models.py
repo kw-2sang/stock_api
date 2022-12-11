@@ -22,10 +22,11 @@ class Tcompanyinfo(models.Model):
 
 
 class Tstockholder(models.Model):
-    scode = models.OneToOneField(Tcode, models.DO_NOTHING, db_column='sCode', primary_key=True)
-    sstockholder = models.CharField(db_column='sStockHolder', max_length=100)
+    scode = models.CharField(db_column='sCode', max_length=10)
+    sstockholder = models.CharField(db_column='sStockHolder', max_length=150)
     nhavingshares = models.BigIntegerField(db_column='nHavingShares')
     npercentage = models.FloatField(db_column='nPercentage')
+    idx = models.AutoField(primary_key=True)
 
     class Meta:
         managed = False
